@@ -1,6 +1,6 @@
 import type { Product, CollectionItem } from "@/types/product";
 
-export const featuredProducts: Product[] = [
+export const allProducts: Product[] = [
   {
     id: "1",
     name: "The Aria Tote",
@@ -36,7 +36,77 @@ export const featuredProducts: Product[] = [
     description: "Timeless silhouette meets modern functionality",
     isNew: true,
   },
+  {
+    id: "5",
+    name: "Classic Day Tote",
+    price: 425,
+    image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=600&q=80",
+    category: "tote",
+    description: "Spacious interior with multiple compartments",
+    isBestseller: true,
+  },
+  {
+    id: "6",
+    name: "Petite Crossbody",
+    price: 285,
+    image: "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=600&q=80",
+    category: "crossbody",
+    description: "Compact yet surprisingly spacious design",
+  },
+  {
+    id: "7",
+    name: "Midnight Clutch",
+    price: 245,
+    image: "https://images.unsplash.com/photo-1575032617751-6ddec2089882?w=600&q=80",
+    category: "clutch",
+    description: "Sleek evening essential with chain strap",
+    isNew: true,
+  },
+  {
+    id: "8",
+    name: "Sophia Shoulder Bag",
+    price: 365,
+    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80",
+    category: "shoulder",
+    description: "Elegant curves with structured silhouette",
+  },
+  {
+    id: "9",
+    name: "Mini Pearl Crossbody",
+    price: 195,
+    image: "https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?w=600&q=80",
+    category: "mini",
+    description: "Delicate chain detail with pearl accents",
+    isNew: true,
+  },
+  {
+    id: "10",
+    name: "The Executive Tote",
+    price: 545,
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80",
+    category: "tote",
+    description: "Professional elegance with laptop compartment",
+  },
+  {
+    id: "11",
+    name: "Velvet Evening Clutch",
+    price: 295,
+    image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&q=80",
+    category: "clutch",
+    description: "Luxurious velvet with crystal closure",
+    isBestseller: true,
+  },
+  {
+    id: "12",
+    name: "Mini Belt Bag",
+    price: 225,
+    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80",
+    category: "mini",
+    description: "Hands-free versatility with adjustable belt",
+  },
 ];
+
+export const featuredProducts: Product[] = allProducts.slice(0, 4);
 
 export const collections: CollectionItem[] = [
   {

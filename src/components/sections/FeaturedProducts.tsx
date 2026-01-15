@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { featuredProducts } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 
@@ -28,13 +29,13 @@ export const FeaturedProducts: React.FC = () => {
 
         {/* View All Link */}
         <div className="text-center mt-16">
-          <a 
-            href="/shop" 
+          <Link 
+            to="/shop" 
             className="inline-flex items-center font-body text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors group"
           >
             View All Products
             <span className="ml-2 w-8 h-px bg-current transition-all group-hover:w-12" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
