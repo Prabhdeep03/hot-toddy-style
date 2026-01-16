@@ -1,31 +1,31 @@
 import { collections } from "@/data/products";
 import type { CollectionItem } from "@/types/product";
 import { ArrowRight } from "lucide-react";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations/ScrollReveal";
+import { motion } from "framer-motion";
 
 export const Collections: React.FC = () => {
   return (
     <section className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <ScrollReveal className="text-center mb-16">
           <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-accent mb-4">
             Explore
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light">
             Our <span className="italic">Collections</span>
           </h2>
-        </div>
+        </ScrollReveal>
 
         {/* Collections Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {collections.map((collection, index) => (
-            <CollectionCard 
-              key={collection.id} 
-              collection={collection}
-              index={index}
-            />
+        <StaggerContainer className="grid md:grid-cols-2 gap-8" staggerDelay={0.15}>
+          {collections.map((collection) => (
+            <StaggerItem key={collection.id}>
+              <CollectionCard collection={collection} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
@@ -33,22 +33,22 @@ export const Collections: React.FC = () => {
 
 interface CollectionCardProps {
   collection: CollectionItem;
-  index: number;
 }
 
-const CollectionCard: React.FC<CollectionCardProps> = ({ collection, index }) => {
+const CollectionCard: React.FC<CollectionCardProps> = ({ collection }) => {
   return (
     <a 
       href={`/collections/${collection.slug}`}
-      className="group relative overflow-hidden animate-fade-in"
-      style={{ animationDelay: `${index * 0.15}s` }}
+      className="group relative overflow-hidden block"
     >
       {/* Image */}
       <div className="aspect-[4/3] overflow-hidden">
-        <img
+        <motion.img
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.7 }}
           src={collection.image}
           alt={collection.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-full object-cover"
           loading="lazy"
         />
       </div>

@@ -1,6 +1,8 @@
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Newsletter: React.FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -17,7 +19,7 @@ export const Newsletter: React.FC = () => {
   return (
     <section className="py-20 md:py-32 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto text-center">
+        <ScrollReveal className="max-w-2xl mx-auto text-center">
           <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-gold-muted mb-6">
             Stay Connected
           </span>
@@ -28,35 +30,51 @@ export const Newsletter: React.FC = () => {
             Be the first to discover new collections, exclusive offers, and stories from our atelier.
           </p>
 
-          {isSubmitted ? (
-            <div className="animate-fade-in">
-              <p className="font-body text-gold">
-                Thank you for subscribing. Welcome to Hot Toddy.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-1 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 font-body"
-              />
-              <Button 
-                type="submit"
-                className="bg-gold hover:bg-gold/90 text-espresso font-body text-sm tracking-widest uppercase"
+          <AnimatePresence mode="wait">
+            {isSubmitted ? (
+              <motion.div
+                key="success"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
               >
-                Subscribe
-              </Button>
-            </form>
-          )}
+                <p className="font-body text-gold">
+                  Thank you for subscribing. Welcome to Hot Toddy.
+                </p>
+              </motion.div>
+            ) : (
+              <motion.form
+                key="form"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                onSubmit={handleSubmit}
+                className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+              >
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="flex-1 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 font-body"
+                />
+                <Button 
+                  type="submit"
+                  className="bg-gold hover:bg-gold/90 text-espresso font-body text-sm tracking-widest uppercase"
+                >
+                  Subscribe
+                </Button>
+              </motion.form>
+            )}
+          </AnimatePresence>
 
           <p className="font-body text-xs text-primary-foreground/50 mt-6">
             By subscribing, you agree to receive marketing communications from Hot Toddy.
           </p>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
