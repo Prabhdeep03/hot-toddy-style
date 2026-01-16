@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Product } from "@/types/product";
 import { Badge } from "@/components/ui/badge";
 
@@ -16,9 +17,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
   };
 
   return (
-    <article 
-      className="group cursor-pointer animate-fade-in"
-      style={{ animationDelay: `${index * 0.1}s` }}
+    <Link to={`/product/${product.id}`}>
+      <article 
+        className="group cursor-pointer animate-fade-in"
+        style={{ animationDelay: `${index * 0.1}s` }}
     >
       {/* Image Container */}
       <div className="relative aspect-[3/4] overflow-hidden bg-secondary mb-4">
@@ -67,5 +69,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
         </p>
       </div>
     </article>
+    </Link>
   );
 };
