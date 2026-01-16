@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations/ScrollReveal";
+import { motion } from "framer-motion";
 
 export const About: React.FC = () => {
   return (
@@ -6,52 +8,64 @@ export const About: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
-          <div className="relative">
-            <div className="aspect-[4/5] overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&q=80"
-                alt="Craftsmanship detail"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+          <ScrollReveal direction="left">
+            <div className="relative">
+              <div className="aspect-[4/5] overflow-hidden">
+                <motion.img
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.5 }}
+                  src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&q=80"
+                  alt="Craftsmanship detail"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              {/* Decorative Element */}
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 border border-accent/30 -z-10" />
             </div>
-            {/* Decorative Element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 border border-accent/30 -z-10" />
-          </div>
+          </ScrollReveal>
 
           {/* Content */}
-          <div className="lg:pl-8">
-            <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-accent mb-6">
-              Our Philosophy
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-6">
-              Crafted with
-              <br />
-              <span className="italic">Intention</span>
-            </h2>
-            <div className="space-y-4 mb-8">
-              <p className="font-body text-muted-foreground leading-relaxed">
-                At Hot Toddy, we believe that a bag is more than an accessory—it's a companion for life's moments. Each piece is meticulously crafted by skilled artisans using the finest materials sourced from trusted tanneries.
-              </p>
-              <p className="font-body text-muted-foreground leading-relaxed">
-                Our designs honor traditional craftsmanship while embracing contemporary aesthetics, creating pieces that transcend seasonal trends and become cherished staples in your collection.
-              </p>
-            </div>
+          <ScrollReveal direction="right" delay={0.2}>
+            <div className="lg:pl-8">
+              <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-accent mb-6">
+                Our Philosophy
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-6">
+                Crafted with
+                <br />
+                <span className="italic">Intention</span>
+              </h2>
+              <div className="space-y-4 mb-8">
+                <p className="font-body text-muted-foreground leading-relaxed">
+                  At Hot Toddy, we believe that a bag is more than an accessory—it's a companion for life's moments. Each piece is meticulously crafted by skilled artisans using the finest materials sourced from trusted tanneries.
+                </p>
+                <p className="font-body text-muted-foreground leading-relaxed">
+                  Our designs honor traditional craftsmanship while embracing contemporary aesthetics, creating pieces that transcend seasonal trends and become cherished staples in your collection.
+                </p>
+              </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 py-8 border-y border-border mb-8">
-              <Stat value="50+" label="Hours per bag" />
-              <Stat value="15" label="Expert artisans" />
-              <Stat value="100%" label="Italian leather" />
-            </div>
+              {/* Stats */}
+              <StaggerContainer className="grid grid-cols-3 gap-8 py-8 border-y border-border mb-8" staggerDelay={0.1}>
+                <StaggerItem>
+                  <Stat value="50+" label="Hours per bag" />
+                </StaggerItem>
+                <StaggerItem>
+                  <Stat value="15" label="Expert artisans" />
+                </StaggerItem>
+                <StaggerItem>
+                  <Stat value="100%" label="Italian leather" />
+                </StaggerItem>
+              </StaggerContainer>
 
-            <Button 
-              variant="outline" 
-              className="font-body text-sm tracking-widest uppercase border-foreground/20 hover:bg-foreground/5"
-            >
-              Discover Our Process
-            </Button>
-          </div>
+              <Button 
+                variant="outline" 
+                className="font-body text-sm tracking-widest uppercase border-foreground/20 hover:bg-foreground/5"
+              >
+                Discover Our Process
+              </Button>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
