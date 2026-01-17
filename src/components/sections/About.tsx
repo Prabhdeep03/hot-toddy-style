@@ -87,3 +87,4 @@ const Stat: React.FC<StatProps> = ({ value, label }) => (
     </p>
   </div>
 );
+
