@@ -7,6 +7,7 @@ import { CartProvider } from "@/context/CartContext";
 import { CartSidebar } from "@/components/CartSidebar";
 import Index from "@/pages/Index";
 import Shop from "@/pages/Shop";
+import About from "@/pages/About";
 import NotFound from "@/pages/NotFound";
 import ProductDetail from "@/pages/ProductDetail";
 
@@ -23,6 +24,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/about" element={<About />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
