@@ -1,8 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, ShoppingBag, Search, User } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { Menu, X, ShoppingBag, Search, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import type { NavItem } from "@/types/product";
 
 const navItems: NavItem[] = [
@@ -15,9 +23,16 @@ const navItems: NavItem[] = [
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const { openCart, totalItems } = useCart();
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
 
   const toggleMenu = (): void => {
     setIsMenuOpen((prev) => !prev);
+  };
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/");
   };
 
   return (
@@ -58,9 +73,38 @@ export const Header: React.FC = () => {
             <Button variant="ghost" size="icon" aria-label="Search">
               <Search className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="hidden md:inline-flex" aria-label="Account">
-              <User className="h-5 w-5" />
-            </Button>
+            
+            {/* Account */}
+            {user ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" className="hidden md:inline-flex" aria-label="Account">
+                    <User className="h-5 w-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  <DropdownMenuItem className="font-body text-sm" disabled>
+                    {user.email}
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={handleSignOut} className="font-body text-sm cursor-pointer">
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Sign Out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="hidden md:inline-flex" 
+                aria-label="Account"
+                onClick={() => navigate("/auth")}
+              >
+                <User className="h-5 w-5" />
+              </Button>
+            )}
+
             <Button 
               variant="ghost" 
               size="icon" 
@@ -94,6 +138,27 @@ export const Header: React.FC = () => {
                 {item.label}
               </Link>
             ))}
+            <div className="pt-4 mt-4 border-t border-border">
+              {user ? (
+                <button
+                  onClick={() => {
+                    handleSignOut();
+                    setIsMenuOpen(false);
+                  }}
+                  className="block py-3 font-body text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors w-full text-left"
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <Link
+                  to="/auth"
+                  className="block py-3 font-body text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Sign In
+                </Link>
+              )}
+            </div>
           </div>
         </nav>
       )}
