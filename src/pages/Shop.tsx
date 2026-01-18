@@ -1,4 +1,5 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ShopProductCard } from "@/components/ShopProductCard";
@@ -26,10 +27,28 @@ const sortOptions: { value: SortOption; label: string }[] = [
   { value: "price-high", label: "Price: High to Low" },
 ];
 
+const validCategories = categories.map(c => c.value);
+
 const Shop: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<ProductCategory | "all">("all");
+  const [searchParams, setSearchParams] = useSearchParams();
   const [sortBy, setSortBy] = useState<SortOption>("featured");
   const [showFilters, setShowFilters] = useState<boolean>(false);
+
+  // Get category from URL or default to "all"
+  const categoryParam = searchParams.get("category");
+  const selectedCategory: ProductCategory | "all" = 
+    categoryParam && validCategories.includes(categoryParam as ProductCategory | "all")
+      ? (categoryParam as ProductCategory | "all")
+      : "all";
+
+  const setSelectedCategory = (category: ProductCategory | "all") => {
+    if (category === "all") {
+      searchParams.delete("category");
+    } else {
+      searchParams.set("category", category);
+    }
+    setSearchParams(searchParams, { replace: true });
+  };
 
   const filteredAndSortedProducts = useMemo(() => {
     let products = [...allProducts];
