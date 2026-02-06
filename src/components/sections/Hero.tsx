@@ -35,9 +35,9 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="font-display text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-6"
           >
-            Timeless
+            Hot Toddy,
             <br />
-            <span className="italic font-normal">Elegance</span>
+            <span className="italic font-normal">Cold Stares.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -45,7 +45,8 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="font-body text-lg md:text-xl text-muted-foreground max-w-md mb-8"
           >
-            Discover our curated collection of artisan-crafted bags, designed for the modern woman who values both style and substance.
+            Designed for style. Built with substance.
+            
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -59,13 +60,6 @@ export const Hero: React.FC = () => {
             >
               Shop Collection
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="font-body text-sm tracking-widest uppercase border-foreground/20 hover:bg-foreground/5 px-8"
-            >
-              Our Story
             </Button>
           </motion.div>
         </div>

@@ -18,7 +18,6 @@ const footerSections: FooterSection[] = [
       { label: "Totes", href: "/shop/totes" },
       { label: "Crossbody", href: "/shop/crossbody" },
       { label: "Clutches", href: "/shop/clutches" },
-      { label: "Gift Cards", href: "/gift-cards" },
     ],
   },
   {

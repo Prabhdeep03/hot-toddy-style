@@ -57,21 +57,25 @@ const About: React.FC = () => {
                   The Beginning
                 </span>
                 <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-6">
-                  A Legacy of
+                The Start of 
                   <br />
-                  <span className="italic">Excellence</span>
+                  <span className="italic">The Blend</span>
                 </h2>
                 <div className="space-y-4 mb-8">
                   <p className="font-body text-muted-foreground leading-relaxed">
-                    Founded in 2018, Hot Toddy emerged from the heart of Florence, Italy—a city 
-                    renowned for its centuries-old leather crafting traditions. Our founder, 
-                    Elena Marchetti, spent years studying under master artisans before bringing 
-                    her vision to life.
+                  Hot Toddy was created with one simple idea: great bags should fit real life.
+                    Not just special occasions, not just trends, but the everyday moments in between.
                   </p>
                   <p className="font-body text-muted-foreground leading-relaxed">
-                    Each Hot Toddy piece represents the perfect marriage of time-honored 
-                    techniques and contemporary design sensibilities, creating accessories 
-                    that transcend fleeting trends.
+                  We started by paying attention to what people actually carry, how they move, and what they expect from a bag they reach for every day. The goal wasn’t to chase luxury or fast fashion, but to sit comfortably in the middle. Well-designed, dependable, and accessible.
+                  </p>
+                  <p className="font-body text-muted-foreground leading-relaxed">
+                  From the beginning, our focus has been on clean design, practical details, 
+                  and materials that make sense for modern living. Every Hot Toddy piece is designed to look current, 
+                  feel easy to use, and hold up to daily wear.
+                  </p>
+                  <p className="font-body text-muted-foreground leading-relaxed">
+                  Today, Hot Toddy stands for thoughtful design without the fuss. Bags made to keep up with you, wherever the day takes you.
                   </p>
                 </div>
               </div>
@@ -97,23 +101,23 @@ const About: React.FC = () => {
               <CraftCard
                 number="01"
                 title="Material Selection"
-                description="We source only the finest full-grain Italian leather from family-owned tanneries in Tuscany, ensuring each hide meets our exacting standards for texture, durability, and natural beauty."
+                description="Our materials are selected for real life. Durable PU that holds up to daily use, easy to care for, and designed to look good wherever the day takes you."
                 image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
               />
             </StaggerItem>
             <StaggerItem>
               <CraftCard
                 number="02"
-                title="Hand Stitching"
-                description="Every stitch is placed by hand using waxed linen thread and traditional saddle-stitching techniques. This method creates a stronger, more durable seam that becomes more beautiful with age."
+                title="Stitching"
+                description="Our construction focuses on reliable stitching and clean finishing, so every bag holds up to real-world use."
                 image="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80"
               />
             </StaggerItem>
             <StaggerItem>
               <CraftCard
                 number="03"
-                title="Edge Finishing"
-                description="Our signature burnished edges are hand-painted and polished multiple times, creating a smooth, refined finish that distinguishes Hot Toddy pieces from mass-produced alternatives."
+                title="Clean & Modern"
+                description="Our edges are cleanly finished using modern techniques to ensure smoothness, durability, and a polished look that holds up to everyday use."
                 image="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80"
               />
             </StaggerItem>
@@ -121,59 +125,15 @@ const About: React.FC = () => {
 
           {/* Stats */}
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-12 border-t border-cream/20" staggerDelay={0.1}>
+            
             <StaggerItem>
-              <Stat value="50+" label="Hours per bag" />
+              <Stat value="2" label="Awesome Founders" />
             </StaggerItem>
             <StaggerItem>
-              <Stat value="15" label="Expert artisans" />
+              <Stat value="100%" label="Animal free leather" />
             </StaggerItem>
             <StaggerItem>
-              <Stat value="100%" label="Italian leather" />
-            </StaggerItem>
-            <StaggerItem>
-              <Stat value="5yr" label="Warranty" />
-            </StaggerItem>
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 md:py-32">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-16">
-            <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-accent mb-6">
-              The People
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl font-light mb-4">
-              Meet Our Team
-            </h2>
-            <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-              Behind every Hot Toddy piece is a dedicated team of artisans, designers, 
-              and craftspeople united by a shared passion for excellence.
-            </p>
-          </ScrollReveal>
-
-          <StaggerContainer className="grid md:grid-cols-3 gap-8 lg:gap-12" staggerDelay={0.15}>
-            <StaggerItem>
-              <TeamMember
-                name="Elena Marchetti"
-                role="Founder & Creative Director"
-                image="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80"
-              />
-            </StaggerItem>
-            <StaggerItem>
-              <TeamMember
-                name="Marco Bianchi"
-                role="Master Craftsman"
-                image="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80"
-              />
-            </StaggerItem>
-            <StaggerItem>
-              <TeamMember
-                name="Sofia Romano"
-                role="Head of Design"
-                image="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80"
-              />
+              <Stat value="3 Month" label="Warranty" />
             </StaggerItem>
           </StaggerContainer>
         </div>
@@ -196,15 +156,15 @@ const About: React.FC = () => {
                 <div className="space-y-6">
                   <ValueItem
                     title="Sustainability"
-                    description="We use vegetable-tanned leathers and eco-friendly dyes, minimizing our environmental impact while creating pieces that last a lifetime."
+                    description="We use high-quality PU to reduce environmental harm while creating bags built to last."
                   />
                   <ValueItem
-                    title="Authenticity"
-                    description="Every piece is numbered and comes with a certificate of authenticity, documenting its journey from raw material to finished product."
+                    title="Built Right"
+                    description="Thoughtful design, dependable quality, made to show up every day."
                   />
                   <ValueItem
-                    title="Timelessness"
-                    description="We design for longevity, not trends. Our classic silhouettes are meant to be carried for decades and passed down through generations."
+                    title="Fashion Forward"
+                    description="We pick what matters and leave the noise behind, creating designs that feel current without trying too hard."
                   />
                 </div>
               </div>
@@ -237,7 +197,7 @@ const About: React.FC = () => {
               Experience the <span className="italic">Difference</span>
             </h2>
             <p className="font-body text-muted-foreground mb-8">
-              Discover our collection of handcrafted leather goods and find your perfect companion.
+              Discover the world of Hot Toddy and find your perfect companion.
             </p>
             <Button 
               asChild
