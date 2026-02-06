@@ -11,6 +11,7 @@ import Shop from "@/pages/Shop";
 import About from "@/pages/About";
 import Collections from "@/pages/Collections";
 import Contact from "@/pages/Contact";
+import Shipping from "@/pages/Shipping";
 import Auth from "@/pages/Auth";
 import NotFound from "@/pages/NotFound";
 import ProductDetail from "@/pages/ProductDetail";
@@ -32,6 +33,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/collections" element={<Collections />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/shipping" element={<Shipping />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="*" element={<NotFound />} />
