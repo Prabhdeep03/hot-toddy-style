@@ -33,7 +33,6 @@ const footerSections: FooterSection[] = [
     title: "Support",
     links: [
       { label: "Contact Us", href: "/contact" },
-      { label: "FAQs", href: "/faqs" },
       { label: "Shipping & Returns", href: "/shipping" },
       { label: "Care Guide", href: "/care" },
     ],
