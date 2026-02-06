@@ -13,7 +13,7 @@ export const Collections: React.FC = () => {
           <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-accent mb-4">
             Explore
           </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light">
+          <h2 className="font-display text-4xl md:text-5xl font-light">
             Our <span className="italic">Collections</span>
           </h2>
         </ScrollReveal>

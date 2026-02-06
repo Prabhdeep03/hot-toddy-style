@@ -12,18 +12,18 @@ const About: React.FC = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-cream">
+      <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-cream">
         <div className="container mx-auto px-4">
           <FadeIn className="max-w-3xl mx-auto text-center">
-            <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-accent mb-6">
+            <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-accent mb-4">
               Our Story
             </span>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-8">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-6">
               Crafted with
               <br />
               <span className="italic">Purpose</span>
             </h1>
-            <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto">
               Hot Toddy was born from a simple belief: that luxury should be intentional, 
               sustainable, and designed to accompany you through life's most cherished moments.
             </p>
@@ -124,8 +124,7 @@ const About: React.FC = () => {
           </StaggerContainer>
 
           {/* Stats */}
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-12 border-t border-cream/20" staggerDelay={0.1}>
-            
+          <StaggerContainer className="grid grid-cols-3 gap-8 mt-20 pt-12 border-t border-cream/20" staggerDelay={0.1}>
             <StaggerItem>
               <Stat value="2" label="Awesome Founders" />
             </StaggerItem>
