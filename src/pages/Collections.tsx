@@ -26,7 +26,7 @@ const Collections: React.FC = () => {
       
       <main className="pt-20 md:pt-24">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-32 bg-secondary/30">
+        <section className="relative py-16 md:py-24 bg-cream">
           <div className="container mx-auto px-4">
             <ScrollReveal className="max-w-3xl mx-auto text-center">
               <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-accent mb-4">
@@ -35,7 +35,7 @@ const Collections: React.FC = () => {
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-light mb-6">
                 Our <span className="italic">Collections</span>
               </h1>
-              <p className="font-body text-lg text-muted-foreground max-w-xl mx-auto">
+              <p className="font-body text-lg text-muted-foreground max-w-lg mx-auto">
                 Explore our thoughtfully curated collections, each designed to complement 
                 your unique style and elevate every occasion.
               </p>
@@ -61,13 +61,13 @@ const Collections: React.FC = () => {
         </section>
 
         {/* Browse All Categories */}
-        <section className="py-20 md:py-32 bg-secondary/30">
+        <section className="py-20 md:py-32 bg-cream">
           <div className="container mx-auto px-4">
             <ScrollReveal className="text-center mb-16">
               <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-accent mb-4">
                 Browse By Category
               </span>
-              <h2 className="font-display text-4xl md:text-5xl font-light">
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light">
                 Shop by <span className="italic">Style</span>
               </h2>
             </ScrollReveal>
@@ -86,11 +86,11 @@ const Collections: React.FC = () => {
         <ScrollReveal direction="up">
           <section className="py-20 md:py-32">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="font-display text-3xl md:text-4xl font-light mb-6">
+              <h2 className="font-display text-4xl md:text-5xl font-light mb-6">
                 Can't decide? <span className="italic">Explore all</span>
               </h2>
-              <p className="font-body text-muted-foreground mb-8 max-w-md mx-auto">
-                Browse our complete selection of handcrafted leather goods.
+              <p className="font-body text-lg text-muted-foreground mb-8 max-w-lg mx-auto">
+                Browse our complete selection of handcrafted bags.
               </p>
               <Link
                 to="/shop"

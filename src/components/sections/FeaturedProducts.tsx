@@ -12,7 +12,7 @@ export const FeaturedProducts: React.FC = () => {
           <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-accent mb-4">
             Curated Selection
           </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light">
+          <h2 className="font-display text-4xl md:text-5xl font-light">
             Featured <span className="italic">Pieces</span>
           </h2>
         </ScrollReveal>

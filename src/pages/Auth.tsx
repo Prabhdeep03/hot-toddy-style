@@ -158,10 +158,10 @@ const Auth = () => {
                 <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-accent mb-4">
                   {mode === "login" ? "Welcome Back" : "Join Us"}
                 </span>
-                <h1 className="font-display text-3xl md:text-4xl font-light">
+                <h1 className="font-display text-4xl md:text-5xl font-light">
                   {mode === "login" ? "Sign In" : "Create Account"}
                 </h1>
-                <p className="font-body text-muted-foreground mt-3">
+                <p className="font-body text-lg text-muted-foreground mt-4">
                   {mode === "login" 
                     ? "Sign in to your account to continue shopping."
                     : "Create an account for faster checkout and order tracking."}

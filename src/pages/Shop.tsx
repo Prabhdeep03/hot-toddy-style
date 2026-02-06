@@ -90,15 +90,15 @@ const Shop: React.FC = () => {
       
       <main className="pt-20 md:pt-24">
         {/* Page Header */}
-        <section className="py-12 md:py-20 bg-cream">
+        <section className="py-16 md:py-24 bg-cream">
           <div className="container mx-auto px-4 text-center">
             <span className="inline-block font-body text-xs tracking-[0.3em] uppercase text-accent mb-4">
               The Collection
             </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-light">
               Shop <span className="italic">All Bags</span>
             </h1>
-            <p className="font-body text-muted-foreground mt-4 max-w-md mx-auto">
+            <p className="font-body text-lg text-muted-foreground mt-6 max-w-lg mx-auto">
               Discover our curated selection of artisan-crafted bags for every occasion.
             </p>
           </div>

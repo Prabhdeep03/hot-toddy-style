@@ -16,7 +16,7 @@ export const ShopProductCard: React.FC<ShopProductCardProps> = ({ product, index
   const formatPrice = (price: number): string => {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "INR",
+      currency: "USD",
       minimumFractionDigits: 0,
     }).format(price);
   };
@@ -43,7 +43,7 @@ export const ShopProductCard: React.FC<ShopProductCardProps> = ({ product, index
         />
         
         {/* Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-2">
+        <div className="absolute top-4 left-4 flex flex-col gap-2">
           {product.isNew && (
             <Badge className="bg-accent text-accent-foreground font-body text-[10px] tracking-widest uppercase">
               New
@@ -57,7 +57,7 @@ export const ShopProductCard: React.FC<ShopProductCardProps> = ({ product, index
         </div>
 
         {/* Add to Cart Button */}
-        <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Button
             onClick={handleAddToCart}
             className="w-full bg-primary/95 hover:bg-primary text-primary-foreground font-body text-xs tracking-widest uppercase"
@@ -70,7 +70,7 @@ export const ShopProductCard: React.FC<ShopProductCardProps> = ({ product, index
       </div>
 
       {/* Product Info */}
-      <div className="space-y-1">
+      <div className="space-y-2">
         <span className="font-body text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
           {product.category}
         </span>
