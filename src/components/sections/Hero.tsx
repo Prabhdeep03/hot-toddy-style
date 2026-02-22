@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1920&q=80"
+          src="/images/bag9.png"
           alt="Luxury leather bag"
           className="w-full h-full object-cover"
         />
