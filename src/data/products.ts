@@ -20,14 +20,6 @@ export const allProducts: Product[] = [
     isBestseller: true,
   },
   {
-    id: "3",
-    name: "Evening Ember Clutch",
-    price: 275,
-    image: "/images/bag3.png",
-    category: "clutch",
-    description: "Statement piece for your most memorable nights",
-  },
-  {
     id: "4",
     name: "The Willow Shoulder Bag",
     price: 395,
@@ -54,15 +46,6 @@ export const allProducts: Product[] = [
     description: "Compact yet surprisingly spacious design",
   },
   {
-    id: "7",
-    name: "Midnight Clutch",
-    price: 245,
-    image: "/images/bag7.png",
-    category: "clutch",
-    description: "Sleek evening essential with chain strap",
-    isNew: true,
-  },
-  {
     id: "8",
     name: "Sophia Shoulder Bag",
     price: 365,
@@ -78,14 +61,6 @@ export const allProducts: Product[] = [
     category: "mini",
     description: "Delicate chain detail with pearl accents",
     isNew: true,
-  },
-  {
-    id: "10",
-    name: "The Executive Tote",
-    price: 545,
-    image: "/images/bag10.png",
-    category: "tote",
-    description: "Professional elegance with laptop compartment",
   },
   {
     id: "11",
