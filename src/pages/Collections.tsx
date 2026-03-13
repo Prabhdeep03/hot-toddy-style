@@ -7,6 +7,7 @@ import type { CollectionItem, Product } from "@/types/product";
 import { ArrowRight } from "lucide-react";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations/ScrollReveal";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 // Map collection slugs to product categories
 const collectionCategoryMap: Record<string, string[]> = {

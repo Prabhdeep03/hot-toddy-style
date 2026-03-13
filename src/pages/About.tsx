@@ -5,11 +5,16 @@ import { Button } from "@/components/ui/button";
 import { ScrollReveal, StaggerContainer, StaggerItem, FadeIn } from "@/components/animations/ScrollReveal";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 
 const About: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <SEO
+        title="Our Story"
+        description="Learn about MAISON's commitment to artisan craftsmanship, premium Italian leather, and timeless luxury bag design."
+        canonical="/about"
+      />
       
       {/* Hero Section */}
       <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-cream">
