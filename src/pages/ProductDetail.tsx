@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { allProducts } from "@/data/products";
 import { useCart } from "@/context/CartContext";
+import { SEO } from "@/components/SEO";
 import type { Product } from "@/types/product";
 
 type ProductColor = {

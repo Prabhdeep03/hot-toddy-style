@@ -23,6 +23,11 @@ const getCollectionProducts = (slug: string): Product[] => {
 const Collections: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Collections"
+        description="Explore our curated collections of luxury leather bags. From everyday essentials to evening elegance."
+        canonical="/collections"
+      />
       <Header />
       
       <main className="pt-20 md:pt-24">
