@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { allProducts } from "@/data/products";
 import type { ProductCategory } from "@/types/product";
 import { SlidersHorizontal, X } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 type SortOption = "featured" | "price-low" | "price-high" | "newest";
 
@@ -86,7 +87,11 @@ const Shop: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <SEO
+        title="Shop All Bags"
+        description="Browse our curated collection of luxury leather bags — totes, crossbody, shoulder bags & clutches. Handcrafted with premium Italian leather."
+        canonical="/shop"
+      />
       
       <main className="pt-20 md:pt-24">
         {/* Page Header */}

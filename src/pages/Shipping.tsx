@@ -3,11 +3,16 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FadeIn, ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Truck, RotateCcw, Shield } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const Shipping: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <SEO
+        title="Shipping & Returns"
+        description="Free shipping on all orders. Learn about MAISON's shipping policies, 30-day returns, and 2-year warranty on luxury leather bags."
+        canonical="/shipping"
+      />
       
       {/* Hero Section */}
       <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-cream">
