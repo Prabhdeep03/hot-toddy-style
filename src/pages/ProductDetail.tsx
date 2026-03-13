@@ -100,6 +100,27 @@ const ProductDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={product.name}
+        description={`${product.description}. Handcrafted luxury ${product.category} bag — ${formatPrice(product.price)}.`}
+        canonical={`/product/${product.id}`}
+        type="product"
+        image={product.image}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: product.name,
+          description: product.description,
+          image: product.image,
+          category: product.category,
+          offers: {
+            "@type": "Offer",
+            price: product.price,
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+          },
+        }}
+      />
       <Header />
       
       <main className="pt-24 pb-20">
