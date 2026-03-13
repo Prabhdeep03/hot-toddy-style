@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { allProducts } from "@/data/products";
 import type { ProductCategory } from "@/types/product";
 import { SlidersHorizontal, X } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 type SortOption = "featured" | "price-low" | "price-high" | "newest";
 
