@@ -7,7 +7,6 @@ import type { CollectionItem, Product } from "@/types/product";
 import { ArrowRight } from "lucide-react";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations/ScrollReveal";
 import { motion } from "framer-motion";
-import { SEO } from "@/components/SEO";
 
 // Map collection slugs to product categories
 const collectionCategoryMap: Record<string, string[]> = {
@@ -23,11 +22,6 @@ const getCollectionProducts = (slug: string): Product[] => {
 const Collections: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO
-        title="Collections"
-        description="Explore our curated collections of luxury leather bags. From everyday essentials to evening elegance."
-        canonical="/collections"
-      />
       <Header />
       
       <main className="pt-20 md:pt-24">

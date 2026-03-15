@@ -3,16 +3,11 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FadeIn } from "@/components/animations/ScrollReveal";
 import { Mail } from "lucide-react";
-import { SEO } from "@/components/SEO";
 
 const Contact: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO
-        title="Contact Us"
-        description="Get in touch with MAISON. We'd love to hear from you about our luxury leather bags and artisan craftsmanship."
-        canonical="/contact"
-      />
+      <Header />
       
       {/* Hero Section */}
       <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-cream">
